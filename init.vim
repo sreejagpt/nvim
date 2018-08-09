@@ -1,20 +1,3 @@
-set termguicolors
-set nowrap
-set wildmenu
-set ignorecase
-set smartcase
-set incsearch
-set lazyredraw
-set magic
-set showmatch
-
-" ERROR BELLS
-set noerrorbells
-set novisualbell
-set encoding=utf8
-
-" TABS
-set expandtab
 set smarttab
 set shiftwidth=2
 set tabstop=2
@@ -46,3 +29,15 @@ endfunction
 
 colorscheme acme
 syntax enable
+
+" WHITESPACE
+
+highlight ExtraWhitespace ctermbg=173 guibg=#d7875f "rgb=255,175,95
+
+" Highlight EOL whitespace,
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+autocmd BufRead,BufNew * match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/
+
+" Don't highlight when in Insert more
+autocmd InsertLeave * match ExtraWhitespace /\\\@<![\u3000[:space:]]\+$/
+autocmd InsertEnter * match ExtraWhitespace /\\\@<![\u3000[:space:]]\+\%#\@<!$/
