@@ -1,4 +1,13 @@
-set smarttab
+set number
+set termguicolors
+set nowrap
+set wildmenu
+set ignorecase
+set smartcase
+set incsearch
+set lazyredraw
+set magic
+set showmatch
 set shiftwidth=2
 set tabstop=2
 
